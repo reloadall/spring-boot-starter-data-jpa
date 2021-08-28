@@ -1,15 +1,20 @@
 package com.example.lab06.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
 public class Country implements Serializable {
 
     private static final long serialVersionUID = -6222596754350587663L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
-    private String codeName;
 
+    private String name;
+
+    private String codeName;
 
     public Country(int id, String name, String codeName) {
         this.id = id;
